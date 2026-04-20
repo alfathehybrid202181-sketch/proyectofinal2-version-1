@@ -11,12 +11,13 @@ namespace PeluqueriaITLA
         public string ServicioNombre { get; set; }
         public decimal Precio { get; set; }
         public DateTime Fecha { get; set; }
+        public string Estado { get; set; }
 
         public Cita()
         {
         }
 
-        public Cita(int id, int clienteId, string clienteNombre, int servicioId, string servicioNombre, decimal precio, DateTime fecha)
+        public Cita(int id, int clienteId, string clienteNombre, int servicioId, string servicioNombre, decimal precio, DateTime fecha, string estado)
         {
             Id = id;
             ClienteId = clienteId;
@@ -25,6 +26,7 @@ namespace PeluqueriaITLA
             ServicioNombre = servicioNombre;
             Precio = precio;
             Fecha = fecha;
+            Estado = estado;
         }
     }
 }

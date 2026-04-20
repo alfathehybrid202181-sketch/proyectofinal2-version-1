@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using PeluqueriaITLA;
-
-List<Cliente> clientes = new List<Cliente>();
-List<Cita> citas = new List<Cita>();
 
 bool wantToContinue = true;
 int choosenOption = 0;
@@ -12,12 +8,20 @@ Console.WriteLine("=== PELUQUERIA ITLA ===\n");
 
 while (wantToContinue)
 {
-    Console.WriteLine("\n1. Registrar Cliente");
+    Console.WriteLine("\n=== MENU PRINCIPAL ===");
+    Console.WriteLine("1. Registrar Cliente");
     Console.WriteLine("2. Ver Clientes");
     Console.WriteLine("3. Agendar Cita");
     Console.WriteLine("4. Ver Citas");
-    Console.WriteLine("5. Reporte de Ganancias");
-    Console.WriteLine("6. Salir");
+    Console.WriteLine("5. Cancelar Cita");
+    Console.WriteLine("6. Marcar Cita como Hecha");
+    Console.WriteLine("7. Reporte de Ganancias");
+    Console.WriteLine("\n--- GESTION DE SERVICIOS ---");
+    Console.WriteLine("8. Ver Servicios");
+    Console.WriteLine("9. Agregar Servicio");
+    Console.WriteLine("10. Modificar Servicio");
+    Console.WriteLine("11. Eliminar Servicio");
+    Console.WriteLine("\n12. Salir");
     Console.Write("Opcion: ");
 
     choosenOption = Convert.ToInt32(Console.ReadLine());
@@ -25,7 +29,7 @@ while (wantToContinue)
     switch (choosenOption)
     {
         case 1:
-            PeluqueriaHelper.AgregarCliente();
+            PeluqueriaHelper.RegistrarCliente();
             break;
         case 2:
             PeluqueriaHelper.VerClientes();
@@ -37,9 +41,27 @@ while (wantToContinue)
             PeluqueriaHelper.VerCitas();
             break;
         case 5:
-            PeluqueriaHelper.ReporteGanancias();
+            PeluqueriaHelper.CancelarCita();
             break;
         case 6:
+            PeluqueriaHelper.MarcarCitaHecha();
+            break;
+        case 7:
+            PeluqueriaHelper.ReporteGanancias();
+            break;
+        case 8:
+            PeluqueriaHelper.VerServicios();
+            break;
+        case 9:
+            PeluqueriaHelper.AgregarServicio();
+            break;
+        case 10:
+            PeluqueriaHelper.ModificarServicio();
+            break;
+        case 11:
+            PeluqueriaHelper.EliminarServicio();
+            break;
+        case 12:
             wantToContinue = false;
             break;
         default:
